@@ -5,6 +5,7 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "smpp": "^0.6.0-rc.3"
   }
 }

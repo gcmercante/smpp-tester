@@ -1,13 +1,20 @@
+import 'dotenv/config';
 import smpp from 'smpp';
 
 const session = smpp.connect('localhost', 9400);
 let smppConnected = false;
 
+const {
+    SMPP_TRX_SYSTEM_ID,
+    SMPP_TRX_PASSWORD,
+    SMPP_TRX_SYSTEM_TYPE,
+} = process.env;
+
 session.on('connect', () => {
     session.bind_transceiver({
-        system_id: 'teste',
-        password: 'q1w2e3',
-        system_type: '',
+        system_id: SMPP_TRX_SYSTEM_ID,
+        password: SMPP_TRX_PASSWORD,
+        system_type: SMPP_TRX_SYSTEM_TYPE,
         interface_version: 52,
     }, (pdu) => {
         if (pdu.command_status == 0) {
