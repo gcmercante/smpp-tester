@@ -1,0 +1,10 @@
+{
+  "name": "smpp-tester",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "smpp": "^0.6.0-rc.3"
+  }
+}
